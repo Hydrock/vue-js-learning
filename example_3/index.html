@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Example 3 - Events</title>
+</head>
+<body>
+  <div id="app">
+    <form action="">
+      <input type="text" v-model="message" v-on:keyup.enter="onClick">
+      <input type="text" v-model="message2" @keyup.enter="onClick">
+      <button v-on:click.prevent="onClick">Кнопка</button>
+    </form>
+  </div>
+  <a href="https://www.youtube.com/watch?v=43jdsq8IUHI&list=PL5r0NkdgM0UOxb4Hl81FV5UIgexwTf8h7&index=3">Lesson 3</a>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: '',
+        message2: ''
+      },
+      methods: {
+        onClick: function() {
+          console.log(this.message, this.message2);
+        }
+      }
+    })
+  </script>
+</body>
+</html>
