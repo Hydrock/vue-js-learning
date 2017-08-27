@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Example 2</title>
+  <style>
+    .strike {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="bear in bears" v-bind:class="{ 'strike': bear.status }">{{ bear.name }}</li>
+    </ul>
+  </div>
+  <a href="https://www.youtube.com/watch?v=EOSJ_6gXTnM&list=PL5r0NkdgM0UOxb4Hl81FV5UIgexwTf8h7&index=2">Lesson 1</a>
+  <script src="https://unpkg.com/vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        bears: [
+          {
+            name: 'гризли',
+            status: false
+          },
+          {
+            name: 'белый',
+            status: false
+          },
+          {
+            name: 'панда',
+            status: true
+          },
+          {
+            name: 'губач',
+            status: false
+          }
+        ]
+      }
+    })
+  </script>
+</body>
+</html>
